@@ -40,6 +40,9 @@ async def main():
 
 if __name__ == "__main__":
     try:
+        if not all(len(r) >= 10 for r in recipients):
+            print("[!] Invalid recipient ID(s). Please edit the code and fill your target(s) userid inside the list at the top!")
+            exit()
         asyncio.run(main())
     except KeyboardInterrupt as e:
         print("\n[!] Safely Handled Ctrl+C :P\n")
