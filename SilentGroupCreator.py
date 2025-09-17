@@ -24,7 +24,7 @@ async def gc_spam():
     if gc_resp.status_code == 429:
         s = r["retry_after"]
         print("Got Limited, attempting to wait: " + str(s) + "s")
-        await asyncio.sleep(s) # do not remove this fuck nigga
+        await asyncio.sleep(s) # do not remove this
     else:
         gc_id = r["id"]
         await asyncio.to_thread(requests.delete, f"https://ptb.discord.com/api/v9/channels/{gc_id}?silent=true", headers={
